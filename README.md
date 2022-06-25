@@ -1,5 +1,12 @@
-# test-terraform
+# Variables
 
-# Variaveis 
 ```
-https://www.terraform.io/language/values/variables 
+https://www.terraform.io/language/values/variables
+```
+
+# Commands
+
+- terraform init
+- terraform plan
+- terraform apply
+- terraform destroy

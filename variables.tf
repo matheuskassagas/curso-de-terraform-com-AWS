@@ -1,4 +1,4 @@
-#https://www.terraform.io/language/values/variables
+
 
 variable "aws_region" {
   type        = string
