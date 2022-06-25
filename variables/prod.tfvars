@@ -7,3 +7,6 @@ instance_tags = {
   Project = "AWS Terraform"
   Env     = "Prod"
 }
+
+
+# terraform plan -var-file="prod.tfvars"
