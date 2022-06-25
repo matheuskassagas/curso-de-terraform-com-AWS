@@ -1,0 +1,3 @@
+#auto read 
+
+envinroment = "dev"
