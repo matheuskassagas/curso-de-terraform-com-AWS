@@ -34,5 +34,10 @@ terraform plan -var-file="prod.tfvars"
 - The terraform.tfvars file, if present.
 - The terraform.tfvars.json file, if present.
 - Any _.auto.tfvars or _.auto.tfvars.json files, processed in lexical order of their filenames
-- Any **-var** and **-var-file options on the command line, in the order they are provided:
-  **terraform plan -var-file="prod.tfvars"\*\*
+- Any **-var** and **-var-file** options on the command line, in the order they are provided:
+
+```
+  terraform plan -var-file="prod.tfvars"
+  terraform apply -var-file="prod.tfvars" -auto-approve
+  terraform detroy -var-file="prod.tfvars" -auto-approve
+```
