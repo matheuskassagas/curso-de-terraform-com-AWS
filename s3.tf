@@ -1,11 +1,13 @@
-resource "aws_s3_bucket" "test-bucket" { #recurso e nome 
+resource "aws_s3_bucket" "test-bucket" { #type and name 
   bucket = "my-tf-test-bucket"
   acl    = "private"
 
   tags = {
     Name        = "My bucket"
     Environment = "Dev"
-    Managedby   = "Terraform"
+    ManagedBy   = "Terraform"
+    Owner       = "Matheus Gigliotti"
+    UpdatedAt   = "2022-01-23"
   }
 
 }
@@ -15,3 +17,5 @@ resource "aws_s3_bucket" "test-bucket" { #recurso e nome
 # -Command - terraform plan
 # -Command - terraform apply
 # -Command - terraform destroy
+# -Command - terraform validate (valida se o cod)
+# -Command - terraform format (formata o cod)
