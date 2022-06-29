@@ -28,7 +28,7 @@ terraform plan -var="aws_profile=tf014" -var="instance_type=t3.medium"
 terraform plan -var-file="prod.tfvars"
 ```
 
-#Variable definition precedence
+# Variable definition precedence
 
 - Environment variables
 - The terraform.tfvars file, if present.
@@ -40,4 +40,22 @@ terraform plan -var-file="prod.tfvars"
   terraform plan -var-file="prod.tfvars"
   terraform apply -var-file="prod.tfvars" -auto-approve
   terraform detroy -var-file="prod.tfvars" -auto-approve
+```
+
+# Gerar arquivo tfplan.out
+
+```
+terraform plan -out="tfplan.out"
+```
+
+# visualizar arquivo output
+
+```
+terraform apply "tfplan.out"
+```
+
+# Link sobre random
+
+```
+https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/pet
 ```

@@ -7,10 +7,12 @@ resource "aws_s3_bucket" "this" {
 resource "aws_s3_bucket_object" "this" {
   bucket = aws_s3_bucket.this.bucket     #.bucket variavel 
   key    = "config/${local.ip_filepath}" #key is where I want to save de file into the bucket
-  source = "ips.json"                    #path, how already it is in the pasta we just put the file name
+  source = local.ip_filepath             #path, how already it is in the pasta we just put the file name
   etag   = filemd5(local.ip_filepath)    #interpolacao 
   #etag   = filemd5("ips.json")       #identifica quando o conteudo foi alterado
 }
+
+
 
 
 

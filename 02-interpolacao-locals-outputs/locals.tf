@@ -1,7 +1,7 @@
 locals { #locals(singular)
   ip_filepath = "ips.json"
-  common_tags = {
 
+  common_tags = {
 
     Service = "Terraform"
 
