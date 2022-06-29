@@ -1,4 +1,4 @@
-instance_type = "t3.medium"
+instance_type = "t3.large"
 
 envinroment = "dev"
 
@@ -7,6 +7,3 @@ instance_tags = {
   Project = "AWS Terraform"
   Env     = "Prod"
 }
-
-
-# terraform plan -var-file="prod.tfvars"
