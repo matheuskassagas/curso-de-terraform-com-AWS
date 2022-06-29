@@ -44,11 +44,15 @@ $  terraform detroy -var-file="prod.tfvars" -auto-approve
 
 # Gerar arquivo tfplan.out
 
+- command
+
 ```
 $ terraform plan -out="tfplan.out"
 ```
 
 # Visualizar arquivo output
+
+- command
 
 ```
 $ terraform apply "tfplan.out"
@@ -66,6 +70,8 @@ https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/p
 https://www.youtube.com/watch?v=x5P_wnrUq6o&list=PLWQmZVQayUUIgSmOj3GPH2BJcn0hOzIaP&index=15
 ```
 
+- command
+
 ```
 $ terraform import aws_s3_bucket.bucket <bucket-name>
 ```
@@ -78,7 +84,9 @@ https://www.youtube.com/watch?v=QHfI3NRedIg&list=PLWQmZVQayUUIgSmOj3GPH2BJcn0hOz
 
 # Executando backend.hcl
 
-- curso-de-terraform-com-AWS\03-remote-state\01-usando-remote-state\backend.hcl
+- path curso-de-terraform-com-AWS\03-remote-state\01-usando-remote-state\backend.hcl
+
+- command
 
 ```
 $ terraform init -backend=true -backend-confing="backend.hcl"
