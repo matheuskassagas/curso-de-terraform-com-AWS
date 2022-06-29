@@ -60,7 +60,7 @@ $ terraform apply "tfplan.out"
 https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/pet
 ```
 
-# Como mportar bucket da aws
+# Como importar bucket da aws
 
 ```
 https://www.youtube.com/watch?v=x5P_wnrUq6o&list=PLWQmZVQayUUIgSmOj3GPH2BJcn0hOzIaP&index=15
@@ -68,4 +68,18 @@ https://www.youtube.com/watch?v=x5P_wnrUq6o&list=PLWQmZVQayUUIgSmOj3GPH2BJcn0hOz
 
 ```
 $ terraform import aws_s3_bucket.bucket <bucket-name>
+```
+
+# Versionamento do Bucket
+
+```
+https://www.youtube.com/watch?v=QHfI3NRedIg&list=PLWQmZVQayUUIgSmOj3GPH2BJcn0hOzIaP&index=16
+```
+
+# Executando backend.hcl
+
+- curso-de-terraform-com-AWS\03-remote-state\01-usando-remote-state\backend.hcl
+
+```
+$ terraform init -backend=true -backend-confing="backend.hcl"
 ```

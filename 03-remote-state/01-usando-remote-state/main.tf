@@ -7,6 +7,13 @@ terraform {
       version = "4.19.0"
     }
   }
+
+  backend "s3" {
+    bucket  = "my-bucket"
+    key     = "dev/01-usando-remote-state/terraform.tfstate"
+    region  = "us-east-1"
+    profile = "default"
+  }
 }
 
 provider "aws" {
