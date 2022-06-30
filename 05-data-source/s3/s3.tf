@@ -8,7 +8,7 @@ resource "aws_s3_bucket" "this" {
 
 resource "aws_s3_bucket_object" "this" {
   bucket       = aws_s3_bucket.this.bucket
-  key          = "instance/instances.txt"
+  key          = "instance/instances-${local.instance.ami}.json" # genrando um arquivo no s3
   source       = "output.json"
   etag         = filemd5("output.json")
   content_type = "application/json"
