@@ -7,13 +7,6 @@ terraform {
       version = "4.19.0"
     }
   }
-
-  backend "s3" {
-    bucket  = "precisa-de-um-bucket-real"
-    key     = "dev/05-data-source/terraform.tfstate"
-    region  = "us-east-1"
-    profile = "default"
-  }
 }
 
 
