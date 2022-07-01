@@ -1,7 +1,7 @@
 locals {
   instance = {
-    id  = data.terraform_remote_state.server.id
-    ami = data.terraform_remote_state.server.ami
-    arn = data.terraform_remote_state.server.arn
+    id  = data.terraform_remote_state.server.output.id
+    ami = data.terraform_remote_state.server.output.ami
+    arn = data.terraform_remote_state.server.output.arn
   }
 }
