@@ -14,7 +14,7 @@ provider "aws" {
   profile = "default"
 }
 
-data "aws_caller_identity" "current" {} #data pull (pegando info da aws)
+data "aws_caller_identity" "current" {} #data pull (pegando info da conta na aws)
 
 resource "aws_s3_bucket" "remote-state" {                           #resource push (mandando info para aws)
   bucket = "tfstate-${data.aws_caller_identity.current.account_id}" #criando um bucket com o numero da conta da aws
@@ -33,6 +33,22 @@ resource "aws_s3_bucket" "remote-state" {                           #resource pu
   }
 }
 
+output "remote_stage_bucket" {
+  value = aws_s3_bucket.remote-state.bucket
+}
+
 output "remote_stage_bucket_arn" {
   value = aws_s3_bucket.remote-state.arn
+}
+
+resource "aws_dynamodb_table" "lock_table" {
+  name = "tflock-${aws_s3_bucket.remote-state.bucket}"
+  read_capacity = 5
+  write_capacity = 5
+  hash_key = "LockID"
+
+  attribute {
+    name = "LockID"
+    type = "S"
+  }
 }

@@ -9,7 +9,7 @@ terraform {
   }
 
   backend "s3" {
-    bucket  = "my-bucket"
+    bucket  = "my-bucket-creado-em-00-remote-state-bucket"
     key     = "dev/01-usando-remote-state/terraform.tfstate"
     region  = "us-east-1"
     profile = "default"
@@ -17,8 +17,8 @@ terraform {
 }
 
 provider "aws" {
-  region  = var.aws_region
-  profile = var.aws_profile
+  region  = "eu-central-1"
+  profile = "default"
+
+
 }
-
-
