@@ -21,6 +21,10 @@ resource "random_pet" "this" {
 module "bucket" {
   source = "./s3_module"
   name   = random_pet.this.id
+  
+  versioning = {
+  enabled = true
+  }
 }
 
 resource "random_pet" "website" {
@@ -30,6 +34,7 @@ resource "random_pet" "website" {
 module "website" {
   source = "./s3_module"
   name   = random_pet.website.id
+  acl   = "public-read"
   files = "${path.root}/website"
   website = {
     index_document = "index.html"
