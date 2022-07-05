@@ -1,8 +1,9 @@
-resource "aws_s3_bucket" "this" {
-  bucket = var.name
-  acl    = var.acl
-  policy = var.policy
-  tags   = var.tags
+resource "aws_s3_bucket_object" "this" {
+  bucket = var.bucket
+  key    = var.key
+  source = var.src
+  etag = filemd5(var.src)
+  content_type = lookup(var.file_types, regex("\\.[^\\.]+\\z", var.src), var.default_file_type)
 
   dynamic "website" {
     for_each = length(keys(var.website)) == 0 ? [] : [var.website]
@@ -13,14 +14,4 @@ resource "aws_s3_bucket" "this" {
       routing_rolus            = lookup(website.value, "routing_rolus", null)
     }
   }
-}
-
-module "object" {
-  source = "./s3_object"
-
-  for_each = var.files != "" ? fileset(var.files, "**") : []
-
-  bucket = aws_s3_bucket.this
-  key = "${var.key_prefix}/${each.value}"
-  src = "${var.files}/${each.value}"
 }
