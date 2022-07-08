@@ -8,16 +8,11 @@ terraform {
     }
   }
 
-  backend "s3" {
-    bucket  = "my-bucket-creado-em-00-remote-state-bucket"
-    key     = "dev/01-usando-remote-state/terraform.tfstate"
-    region  = "us-east-1"
-    profile = "default"
-  }
+  backend "s3" {}
 }
 
 provider "aws" {
-  region  = "eu-central-1"
+  region  = "us-east-1"
   profile = "default"
 
 
